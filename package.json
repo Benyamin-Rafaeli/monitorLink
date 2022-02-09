@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "cypress:chrome": "cypress run --browser chrome",
+    "open": "cypress open",
+    "cypress:verify": "cypress verify",
+    "cypress:run": "cypress run"
+  },
   "devDependencies": {
     "cypress": "^9.4.1",
     "cypress-social-logins": "^1.13.0",

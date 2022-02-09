@@ -1,0 +1,324 @@
+[
+  {
+    "site": {
+      "Letter": "fico",
+      "Freq": "60"
+    },
+    "count": "73100000"
+  },
+  {
+    "site": {
+      "Letter": "servicenow",
+      "Freq": "60"
+    },
+    "count": "9150000"
+  },
+  {
+    "site": {
+      "Letter": "qualys",
+      "Freq": "56"
+    },
+    "count": "1470000"
+  },
+  {
+    "site": {
+      "Letter": "onetrust",
+      "Freq": "55"
+    },
+    "count": "3240000"
+  },
+  {
+    "site": {
+      "Letter": "iss",
+      "Freq": "52"
+    },
+    "count": "101000000"
+  },
+  {
+    "site": {
+      "Letter": "securityscorecard",
+      "Freq": "52"
+    },
+    "count": "104000"
+  },
+  {
+    "site": {
+      "Letter": "bwise",
+      "Freq": "49"
+    },
+    "count": "1430000"
+  },
+  {
+    "site": {
+      "Letter": "helios",
+      "Freq": "49"
+    },
+    "count": "71400000"
+  },
+  {
+    "site": {
+      "Letter": "bitsight",
+      "Freq": "40"
+    },
+    "count": "91400"
+  },
+  {
+    "site": {
+      "Letter": "riskiq",
+      "Freq": "36"
+    },
+    "count": "153000"
+  },
+  {
+    "site": {
+      "Letter": "praetorian",
+      "Freq": "31"
+    },
+    "count": "3520000"
+  },
+  {
+    "site": {
+      "Letter": "lifars",
+      "Freq": "30"
+    },
+    "count": "26400"
+  },
+  {
+    "site": {
+      "Letter": "prevalent",
+      "Freq": "29"
+    },
+    "count": "303000000"
+  },
+  {
+    "site": {
+      "Letter": "bluevoyant",
+      "Freq": "28"
+    },
+    "count": "84900"
+  },
+  {
+    "site": {
+      "Letter": "crossbeam",
+      "Freq": "28"
+    },
+    "count": "1960000"
+  },
+  {
+    "site": {
+      "Letter": "recordedfuture",
+      "Freq": "28"
+    },
+    "count": "290000"
+  },
+  {
+    "site": {
+      "Letter": "cybersaint",
+      "Freq": "27"
+    },
+    "count": "28900"
+  },
+  {
+    "site": {
+      "Letter": "itrust",
+      "Freq": "23"
+    },
+    "count": "92400000"
+  },
+  {
+    "site": {
+      "Letter": "upguard",
+      "Freq": "22"
+    },
+    "count": "256000"
+  },
+  {
+    "site": {
+      "Letter": "cybergrx",
+      "Freq": "19"
+    },
+    "count": "21200"
+  },
+  {
+    "site": {
+      "Letter": "rsaarcher",
+      "Freq": "18"
+    },
+    "count": "78500"
+  },
+  {
+    "site": {
+      "Letter": "panorays",
+      "Freq": "16"
+    },
+    "count": "24700"
+  },
+  {
+    "site": {
+      "Letter": "saiglobal",
+      "Freq": "16"
+    },
+    "count": "757000"
+  },
+  {
+    "site": {
+      "Letter": "zengrc",
+      "Freq": "13"
+    },
+    "count": "22900"
+  },
+  {
+    "site": {
+      "Letter": "lockpath",
+      "Freq": "12"
+    },
+    "count": "374000"
+  },
+  {
+    "site": {
+      "Letter": "zartech",
+      "Freq": "12"
+    },
+    "count": "121000"
+  },
+  {
+    "site": {
+      "Letter": "riskrecon",
+      "Freq": "10"
+    },
+    "count": "25600"
+  },
+  {
+    "site": {
+      "Letter": "balbix",
+      "Freq": "7"
+    },
+    "count": "32200"
+  },
+  {
+    "site": {
+      "Letter": "blackkite",
+      "Freq": "6"
+    },
+    "count": "2200000"
+  },
+  {
+    "site": {
+      "Letter": "sharedassessments",
+      "Freq": "6"
+    },
+    "count": "20600"
+  },
+  {
+    "site": {
+      "Letter": "venminder",
+      "Freq": "6"
+    },
+    "count": "16100"
+  },
+  {
+    "site": {
+      "Letter": "aravo",
+      "Freq": "5"
+    },
+    "count": "165000"
+  },
+  {
+    "site": {
+      "Letter": "nqc",
+      "Freq": "5"
+    },
+    "count": "2720000"
+  },
+  {
+    "site": {
+      "Letter": "processunity",
+      "Freq": "5"
+    },
+    "count": "24400"
+  },
+  {
+    "site": {
+      "Letter": "surecloud",
+      "Freq": "5"
+    },
+    "count": "64400"
+  },
+  {
+    "site": {
+      "Letter": "trusight",
+      "Freq": "5"
+    },
+    "count": "89100"
+  },
+  {
+    "site": {
+      "Letter": "trustmapp",
+      "Freq": "5"
+    },
+    "count": "5940"
+  },
+  {
+    "site": {
+      "Letter": "wolfpac",
+      "Freq": "4"
+    },
+    "count": "13600000"
+  },
+  {
+    "site": {
+      "Letter": "aptible",
+      "Freq": "3"
+    },
+    "count": "29000"
+  },
+  {
+    "site": {
+      "Letter": "securitytrails",
+      "Freq": "3"
+    },
+    "count": "133000"
+  },
+  {
+    "site": {
+      "Letter": "strikegraph",
+      "Freq": "3"
+    },
+    "count": "7150"
+  },
+  {
+    "site": {
+      "Letter": "whistic",
+      "Freq": "3"
+    },
+    "count": "11000"
+  },
+  {
+    "site": {
+      "Letter": "securitypal",
+      "Freq": "2"
+    },
+    "count": "47800"
+  },
+  {
+    "site": {
+      "Letter": "tevora",
+      "Freq": "2"
+    },
+    "count": "25500"
+  },
+  {
+    "site": {
+      "Letter": "thirdpartytrust",
+      "Freq": "2"
+    },
+    "count": "54200"
+  },
+  {
+    "site": {
+      "Letter": "tracesecurity",
+      "Freq": "2"
+    },
+    "count": "30900"
+  }
+]
