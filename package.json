@@ -5,6 +5,7 @@
     "cypress:verify": "cypress verify",
     "cypress:run": "cypress run"
   },
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^9.5.0",
     "cypress-social-logins": "^1.13.0",
