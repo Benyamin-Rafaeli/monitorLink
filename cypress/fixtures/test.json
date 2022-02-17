@@ -1,19 +1,25 @@
 [
   {
     "hashtag": "safesecurity",
-    "website": "https://www.safe.security"
+    "website": "https://www.safe.security",
+    "linkedinCounter": 50,
+    "kuku": "test",
+    "muku": "lalalala"
   },
   {
     "hashtag": "aptible",
-    "website": "https://www.aptible.com"
+    "website": "https://www.aptible.com",
+    "linkedinCounter": 10
   },
   {
     "hashtag": "aravo",
-    "website": "https://aravo.com"
+    "website": "https://aravo.com",
+    "linkedinCounter": 20
   },
   {
     "hashtag": "aruvio",
-    "website": "http://aruvio.com"
+    "website": "http://aruvio.com",
+    "linkedinCounter": 70
   },
   {
     "hashtag": "balbix",
