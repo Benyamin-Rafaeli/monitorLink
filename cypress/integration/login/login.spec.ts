@@ -1,29 +1,40 @@
 // a.map(el => Object.assign({linkedin: '', }, el))
 
+let graph = [];
+
 describe('login', () => {
   before(() => {
     const username = Cypress.env('username');
     const password = Cypress.env('password');
     cy.loginUi(username, password).waitForResources();
-    cy.fixture('test').as('competition');
   });
 
-  it.skip('count all general', () => {
+  it('count all general', () => {
     let count;
-    cy.get('@competition').then(array => {
+    let total;
+    cy.fixture('test').then(array => {
       count = array.length;
-      array.each((index, item) => {
-        cy.navigate(undefined, `#${item[index].hashtag}`);
+      total = array.length;
+
+      array.forEach((item, index) => {
+        cy.log(`count : ${count}`);
+        cy.log(`total : ${total - index}`);
+
+        cy.navigate(undefined, `#${item.hashtag}`);
         cy.getTotalPageNumber();
 
         cy.get('@times')
           .then(time => {
-            graph.push({ Letter: hashTag, Freq: String(time).trim() });
+            graph.push({ website: item.website, hashtag: item.hashtag, linkedin: String(time).trim() });
             cy.log(JSON.stringify(graph));
             cy.log(String(count));
             count -= 1;
           })
           .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
+
+        if (Number(total - index) % 10 === 0) {
+          cy.pause();
+        }
       });
     });
   });
@@ -31,9 +42,9 @@ describe('login', () => {
   it.skip('gulugulu', () => {
     let times;
     let check;
-    cy.fixture('test.json').then(all => (times = all.length));
+    cy.fixture('1_test.json').then(all => (times = all.length));
 
-    cy.fixture('test.json').each((el, index) => {
+    cy.fixture('1_test.json').each((el, index) => {
       const url = `${el.website}`;
       cy.log(url);
       cy.visit('https://www.google.com/search', { qs: { q: url } }).waitForResources();

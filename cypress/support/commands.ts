@@ -102,7 +102,6 @@ Cypress.Commands.add('navigate', (pageNumber: string, hashTag: string) => {
     },
   })
     .then(() => cy.scrollTo('bottom', { ensureScrollable: false, duration: randomNumber(10) }))
-    // easing: 'linear',
     .waitForResources();
 });
 
@@ -111,11 +110,32 @@ Cypress.Commands.add('loginUi', (username: string, password: string) => {
 
   cy.get('#username')
     .type(username, { delay: randomNumber(10 + 20) })
-    .wait(delay);
+    .wait(delay + randomNumber(10 + 20));
 
   cy.get('#password')
     .type(password, { delay: randomNumber(10 + 30) })
-    .wait(delay);
+    .wait(delay + randomNumber(10 + 20));
 
   cy.get('.btn__primary--large').click();
+});
+
+Cypress.Commands.add('getTotalPageNumber', () => {
+  cy.scrollTo('bottom', { ensureScrollable: false, duration: randomNumber(10) }).waitForResources();
+
+  cy.get('.search-results-container').children().last().as('lastContainer');
+  cy.get('@lastContainer').then(containers => {
+    cy.wrap(containers)
+      .eq(0)
+      .each(el => {
+        if (el.text().includes('Previous')) {
+          cy.log(el.text());
+          cy.get('.artdeco-pagination__pages--number li')
+            .last()
+            .then(el => cy.wrap(el.text()).as('times'));
+        } else {
+          cy.wrap(0).as('times');
+        }
+      })
+      .waitForResources();
+  });
 });
