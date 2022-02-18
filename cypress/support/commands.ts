@@ -10,12 +10,8 @@ Cypress.Commands.add('visitGoogle', (webSite: string) => {
   // });
 
   cy.visit('https://www.google.com/search', {
-      qs: { q: webSite },
+    qs: { q: webSite },
   }).waitForResources();
-
-
-
-
 });
 
 Cypress.Commands.add('waitForResources', (resources = []) => {
@@ -88,4 +84,38 @@ Cypress.Commands.add('waitForResources', (resources = []) => {
       }, timeout);
     });
   });
+});
+
+const delay = 3000;
+const randomNumber = max => {
+  return Math.floor(Math.random() * max);
+};
+
+Cypress.Commands.add('navigate', (pageNumber: string, hashTag: string) => {
+  // https://www.linkedin.com/search/results/all/?keywords=#panorays&origin=GLOBAL_SEARCH_HEADER
+  const page = pageNumber || 1;
+  cy.visit('https://www.linkedin.com/search/results/all/', {
+    qs: {
+      keywords: hashTag,
+      origin: 'GLOBAL_SEARCH_HEADER',
+      page,
+    },
+  })
+    .then(() => cy.scrollTo('bottom', { ensureScrollable: false, duration: randomNumber(10) }))
+    // easing: 'linear',
+    .waitForResources();
+});
+
+Cypress.Commands.add('loginUi', (username: string, password: string) => {
+  cy.visit('https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin').wait(delay);
+
+  cy.get('#username')
+    .type(username, { delay: randomNumber(10 + 20) })
+    .wait(delay);
+
+  cy.get('#password')
+    .type(password, { delay: randomNumber(10 + 30) })
+    .wait(delay);
+
+  cy.get('.btn__primary--large').click();
 });

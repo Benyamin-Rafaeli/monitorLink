@@ -1,16 +1,34 @@
-let count;
-let googleCount = [];
+// a.map(el => Object.assign({linkedin: '', }, el))
 
 describe('login', () => {
-  it('should be able to login', () => {
-    cy.visit('https://www.facebook.com/');
-    // cy.get('[data-testid="field-email"]').type('johndoe@gmail.com');
-    // cy.get('[data-testid="field-password"]').type('helloworld123!');
-    // cy.get('[data-testid="login-button"]').click();
-    // cy.location('pathname').should('eq', '/home');
+  before(() => {
+    const username = Cypress.env('username');
+    const password = Cypress.env('password');
+    cy.loginUi(username, password).waitForResources();
+    cy.fixture('test').as('competition');
   });
 
-  it.only('orders', () => {
+  it.skip('count all general', () => {
+    let count;
+    cy.get('@competition').then(array => {
+      count = array.length;
+      array.each((index, item) => {
+        cy.navigate(undefined, `#${item[index].hashtag}`);
+        cy.getTotalPageNumber();
+
+        cy.get('@times')
+          .then(time => {
+            graph.push({ Letter: hashTag, Freq: String(time).trim() });
+            cy.log(JSON.stringify(graph));
+            cy.log(String(count));
+            count -= 1;
+          })
+          .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
+      });
+    });
+  });
+
+  it.skip('gulugulu', () => {
     let times;
     let check;
     cy.fixture('test.json').then(all => (times = all.length));
@@ -39,5 +57,13 @@ describe('login', () => {
       // debugger;
     });
     // cy.writeFile(`cypress/fixtures/googleSum.json`, googleSum);
+  });
+
+  it.skip('should be able to login', () => {
+    cy.visit('https://www.facebook.com/');
+    // cy.get('[data-testid="field-email"]').type('johndoe@gmail.com');
+    // cy.get('[data-testid="field-password"]').type('helloworld123!');
+    // cy.get('[data-testid="login-button"]').click();
+    // cy.location('pathname').should('eq', '/home');
   });
 });

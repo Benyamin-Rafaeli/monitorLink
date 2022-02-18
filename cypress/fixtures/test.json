@@ -1,248 +1,312 @@
 [
   {
-    "hashtag": "safesecurity",
-    "website": "https://www.safe.security",
-    "linkedinCounter": 50,
-    "kuku": "test",
-    "muku": "lalalala"
-  },
-  {
+    "linkedin": "3",
     "hashtag": "aptible",
-    "website": "https://www.aptible.com",
-    "linkedinCounter": 10
+    "website": "https://www.aptible.com"
   },
   {
+    "linkedin": "5",
     "hashtag": "aravo",
-    "website": "https://aravo.com",
-    "linkedinCounter": 20
+    "website": "https://aravo.com"
   },
   {
+    "linkedin": "",
     "hashtag": "aruvio",
-    "website": "http://aruvio.com",
-    "linkedinCounter": 70
+    "website": "http://aruvio.com"
   },
   {
+    "linkedin": "7",
     "hashtag": "balbix",
     "website": "https://www.balbix.com"
   },
   {
+    "linkedin": "40",
     "hashtag": "bitsight",
     "website": "https://www.bitsight.com"
   },
   {
+    "linkedin": "6",
     "hashtag": "blackkite",
     "website": "https://blackkite.com"
   },
   {
+    "linkedin": "28",
     "hashtag": "bluevoyant",
     "website": "https://www.bluevoyant.com"
   },
   {
+    "linkedin": "49",
     "hashtag": "bwise",
     "website": "https://www.sai360.com"
   },
   {
+    "linkedin": "",
+    "hashtag": "cogris",
+    "website": "https://cogris.com/"
+  },
+  {
+    "linkedin": "28",
     "hashtag": "crossbeam",
     "website": "https://www.crossbeam.com"
   },
   {
+    "linkedin": "",
+    "hashtag": "crowdstrike",
+    "website": "https://www.crowdstrike.com"
+  },
+  {
+    "linkedin": "19",
     "hashtag": "cybergrx",
     "website": "https://www.cybergrx.com"
   },
   {
+    "linkedin": "",
     "hashtag": "cyberrx",
     "website": "https://cyber-rx.com"
   },
   {
+    "linkedin": "27",
     "hashtag": "cybersaint",
     "website": "https://www.cybersaint.io"
   },
   {
+    "linkedin": "",
     "hashtag": "cyrating",
     "website": "https://www.cyrating.com"
   },
   {
+    "linkedin": "60",
     "hashtag": "fico",
     "website": "https://www.fico.com"
   },
   {
+    "linkedin": "",
+    "hashtag": "governify",
+    "website": "https://governify.com"
+  },
+  {
+    "linkedin": "",
     "hashtag": "hellios",
     "website": "https://hellios.com"
   },
   {
+    "linkedin": "52",
     "hashtag": "iss",
     "website": "https://www.isscorporatesolutions.com"
   },
   {
+    "linkedin": "23",
     "hashtag": "itrust",
     "website": "https://itrustinc.com"
   },
   {
+    "linkedin": "30",
     "hashtag": "lifars",
     "website": "https://lifars.com"
   },
   {
+    "linkedin": "12",
     "hashtag": "lockpath",
     "website": "https://www.navexglobal.com"
   },
   {
+    "linkedin": "",
     "hashtag": "miragin",
     "website": "http://www.miragin.com"
   },
   {
+    "linkedin": "5",
     "hashtag": "nqc",
     "website": "https://nqc.com"
   },
   {
+    "linkedin": "55",
     "hashtag": "onetrust",
     "website": "https://www.onetrust.com"
   },
   {
+    "linkedin": "16",
     "hashtag": "panorays",
     "website": "https://panorays.com"
   },
   {
+    "linkedin": "31",
     "hashtag": "praetorian",
     "website": "https://www.praetorian.com"
   },
   {
+    "linkedin": "29",
     "hashtag": "prevalent",
     "website": "https://www.prevalent.net"
   },
   {
+    "linkedin": "5",
     "hashtag": "processunity",
     "website": "https://www.processunity.com"
   },
   {
+    "linkedin": "56",
     "hashtag": "qualys",
     "website": "https://www.qualys.com"
   },
   {
+    "linkedin": "28",
     "hashtag": "recordedfuture",
     "website": "https://www.recordedfuture.com"
   },
   {
+    "linkedin": "",
+    "hashtag": "reciprocity",
+    "website": "https://reciprocity.com"
+  },
+  {
+    "linkedin": "36",
     "hashtag": "riskiq",
     "website": "https://www.riskiq.com"
   },
   {
+    "linkedin": "",
     "hashtag": "riskledger",
     "website": "https://riskledger.com"
   },
   {
+    "linkedin": "10",
     "hashtag": "riskrecon",
     "website": "https://www.riskrecon.com"
   },
   {
+    "linkedin": "18",
     "hashtag": "rsaarcher",
     "website": "https://www.archerirm.com"
   },
   {
+    "linkedin": "",
     "hashtag": "safesecurity",
     "website": "https://www.safe.security"
   },
   {
+    "linkedin": "16",
     "hashtag": "saiglobal",
     "website": "https://www.saiglobal.com"
   },
   {
+    "linkedin": "",
     "hashtag": "sai360",
     "website": "https://www.sai360.com"
   },
   {
+    "linkedin": "",
     "hashtag": "securitypalhq",
     "website": "https://securitypalhq.com"
   },
   {
+    "linkedin": "52",
     "hashtag": "securityscorecard",
     "website": "https://securityscorecard.com"
   },
   {
+    "linkedin": "3",
     "hashtag": "securitytrails",
     "website": "https://securitytrails.com"
   },
   {
+    "linkedin": "60",
     "hashtag": "servicenow",
     "website": "https://www.servicenow.com"
   },
   {
+    "linkedin": "6",
     "hashtag": "sharedassessments",
     "website": "https://sharedassessments.org"
   },
   {
+    "linkedin": "",
     "hashtag": "stacksi",
     "website": "https://www.stacksi.com"
   },
   {
+    "linkedin": "3",
     "hashtag": "strikegraph",
     "website": "https://www.strikegraph.com"
   },
   {
+    "linkedin": "5",
     "hashtag": "surecloud",
     "website": "https://www.surecloud.com"
   },
   {
+    "linkedin": "2",
     "hashtag": "tevora",
     "website": "https://www.tevora.com"
   },
   {
+    "linkedin": "2",
     "hashtag": "thirdpartytrust",
     "website": "https://www.thirdpartytrust.com"
   },
   {
+    "linkedin": "2",
     "hashtag": "tracesecurity",
     "website": "https://www.tracesecurity.com"
   },
   {
+    "linkedin": "",
     "hashtag": "trusightsolutions",
     "website": "https://trusightsolutions.com"
   },
   {
+    "linkedin": "",
     "hashtag": "trustexchange",
     "website": "https://trustexchange.com"
   },
   {
+    "linkedin": "5",
     "hashtag": "trustmapp",
     "website": "https://trustmapp.com"
   },
   {
+    "linkedin": "",
     "hashtag": "trustnetinc",
     "website": "https://www.trustnetinc.com"
   },
   {
+    "linkedin": "22",
     "hashtag": "upguard",
     "website": "https://www.upguard.com"
   },
   {
+    "linkedin": "",
     "hashtag": "vendict",
     "website": "https://www.vendict.com"
   },
   {
+    "linkedin": "6",
     "hashtag": "venminder",
     "website": "https://www.venminder.com"
   },
   {
+    "linkedin": "",
     "hashtag": "verego",
     "website": "http://verego.com"
   },
   {
+    "linkedin": "3",
     "hashtag": "whistic",
     "website": "https://www.whistic.com"
   },
   {
+    "linkedin": "4",
     "hashtag": "wolfpac",
     "website": "https://www.wolfpacsolutions.com"
   },
   {
+    "linkedin": "",
     "hashtag": "xqcyber",
     "website": "https://xqcyber.com"
   },
   {
+    "linkedin": "12",
     "hashtag": "zartech",
     "website": "https://www.zartech.net"
-  },
-  {
-    "hashtag": "reciprocity",
-    "website": "https://reciprocity.com"
   }
 ]
