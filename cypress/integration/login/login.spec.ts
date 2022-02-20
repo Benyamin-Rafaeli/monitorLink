@@ -38,7 +38,7 @@ describe('login', () => {
     });
   });
 
-  it.skip('google links counts', () => {
+  it.only('google links counts', () => {
     cy.fixture('2_test').then(array => {
       total = array.length;
       array.forEach((item, index) => {
@@ -52,6 +52,7 @@ describe('login', () => {
             item.googleCount = result.split('תוצאות')[0].replace(/^\D+/g, '').trim();
             graph.push(item);
             cy.log(JSON.stringify(graph));
+            cy.pause();
           })
           .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
 
