@@ -1,5 +1,8 @@
 // a.map(el => Object.assign({linkedin: '', }, el))
+// import Sheet from '../../sheet';
 
+const username = Cypress.env('username');
+const password = Cypress.env('password');
 let graph = [];
 let count;
 let total;
@@ -11,20 +14,15 @@ const forceControl = (index: number) => {
 };
 
 describe('login', () => {
-  before(() => {
-    const username = Cypress.env('username');
-    const password = Cypress.env('password');
-    cy.loginUi(username, password).waitForResources();
-  });
-
-  it.skip('count all general', () => {
+  it.skip('hashtags on linkedin', () => {
+    cy.linkedInLogin(username, password).waitForResources();
     cy.fixture('test').then(array => {
       total = array.length;
       array.forEach((item, index) => {
-        cy.log(`total : ${total - index}`);
+        cy.log(`🗣️🗣️🗣️🗣️🗣️ total : ${total - index}`);
 
-        cy.navigate(undefined, `#${item.hashtag}`);
-        cy.getTotalPageNumber();
+        cy.linkedInHashtags(undefined, `#${item.hashtag}`);
+        cy.linkedInTotalPageNumbers();
 
         cy.get('@times')
           .then(time => {
@@ -33,18 +31,19 @@ describe('login', () => {
           })
           .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
 
-        forceControl(index);
+        // forceControl(index);
       });
     });
   });
 
-  it.only('google links counts', () => {
-    cy.fixture('2_test').then(array => {
+  it.skip('links on google', () => {
+    cy.fixture('test').then(array => {
       total = array.length;
       array.forEach((item, index) => {
-        cy.log(`total : ${total - index}`);
+        cy.log(`🗣️🗣️🗣️🗣️🗣️ total : ${total - index}`);
 
-        cy.visit('https://www.google.com/search', { qs: { q: item.website } }).waitForResources();
+        cy.googleBackLinks(item.website);
+
         cy.get('#result-stats').invoke('text').as('result');
         cy.get('@result')
           .then(result => {
@@ -52,20 +51,35 @@ describe('login', () => {
             item.googleCount = result.split('תוצאות')[0].replace(/^\D+/g, '').trim();
             graph.push(item);
             cy.log(JSON.stringify(graph));
-            cy.pause();
           })
           .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
-
-        forceControl(index);
       });
     });
   });
 
-  it.skip('should be able to login', () => {
-    cy.visit('https://www.facebook.com/');
-    // cy.get('[data-testid="field-email"]').type('johndoe@gmail.com');
-    // cy.get('[data-testid="field-password"]').type('helloworld123!');
-    // cy.get('[data-testid="login-button"]').click();
-    // cy.location('pathname').should('eq', '/home');
-  });
+  // it.skip('should be able to login', () => {
+  //   cy.visit('https://www.facebook.com/');
+  //   // cy.get('[data-testid="field-email"]').type('johndoe@gmail.com');
+  //   // cy.get('[data-testid="field-password"]').type('helloworld123!');
+  //   // cy.get('[data-testid="login-button"]').click();
+  //   // cy.location('pathname').should('eq', '/home');
+  // });
+
+  // it.skip('sheet', () => {
+  //   const url = 'https://validator.w3.org/nu/?doc=https://panorays.com/';
+  //   const sheet = new Sheet();
+  //   sheet.load();
+  //   fetch(url).then(res => console.log(res.body));
+  //   const rows = json.map(job => {
+  //     return {
+  //       company: job.company,
+  //       url: job.url,
+  //       name: job.name,
+  //     };
+  //   });
+  //   sheet.addRows(rows);
+  //   doc.updateProperties({ title: 'renamed doc' });
+  //   // adding / removing sheets
+  //   const newSheet = doc.addSheet({ title: 'hot new sheet!' });
+  // });
 });

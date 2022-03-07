@@ -1,5 +1,4 @@
-// fetch('./2_test.json')
-fetch('./a.json')
+fetch('./test.json')
   .then(data => {
     return data.json();
   })

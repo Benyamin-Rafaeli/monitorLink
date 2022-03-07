@@ -1,17 +1,10 @@
-Cypress.Commands.add('visitGoogle', (webSite: string) => {
-  // cy.visit('https://www.google.com/search', {
-  //   onBeforeLoad(win) {
-  //     Object.defineProperty(win.navigator, 'language', { value: 'en-US' });
-  //     Object.defineProperty(win.navigator, 'languages', { value: ['en'] });
-  //     Object.defineProperty(win.navigator, 'Accept-Language', { value: ['en'] });
-  //   },
-  //   headers: { 'Accept-Language': 'en' },
-  //   qs: { q: webSite },
-  // });
+const delay = 3000;
+const randomNumber = max => {
+  return Math.floor(Math.random() * max);
+};
 
-  cy.visit('https://www.google.com/search', {
-    qs: { q: webSite },
-  }).waitForResources();
+Cypress.Commands.add('googleBackLinks', (webSite: string) => {
+  cy.visit('https://www.google.com/search', { qs: { q: webSite } }).waitForResources();
 });
 
 Cypress.Commands.add('waitForResources', (resources = []) => {
@@ -86,26 +79,17 @@ Cypress.Commands.add('waitForResources', (resources = []) => {
   });
 });
 
-const delay = 3000;
-const randomNumber = max => {
-  return Math.floor(Math.random() * max);
-};
-
-Cypress.Commands.add('navigate', (pageNumber: string, hashTag: string) => {
+Cypress.Commands.add('linkedInHashtags', (pageNumber: string, hashTag: string) => {
   // https://www.linkedin.com/search/results/all/?keywords=#panorays&origin=GLOBAL_SEARCH_HEADER
   const page = pageNumber || 1;
   cy.visit('https://www.linkedin.com/search/results/all/', {
-    qs: {
-      keywords: hashTag,
-      origin: 'GLOBAL_SEARCH_HEADER',
-      page,
-    },
+    qs: { keywords: hashTag, origin: 'GLOBAL_SEARCH_HEADER', page },
   })
     .then(() => cy.scrollTo('bottom', { ensureScrollable: false, duration: randomNumber(10) }))
-    .waitForResources();
+    .wait(randomNumber(5000));
 });
 
-Cypress.Commands.add('loginUi', (username: string, password: string) => {
+Cypress.Commands.add('linkedInLogin', (username: string, password: string) => {
   cy.visit('https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin').wait(delay);
 
   cy.get('#username')
@@ -119,7 +103,7 @@ Cypress.Commands.add('loginUi', (username: string, password: string) => {
   cy.get('.btn__primary--large').click();
 });
 
-Cypress.Commands.add('getTotalPageNumber', () => {
+Cypress.Commands.add('linkedInTotalPageNumbers', () => {
   cy.scrollTo('bottom', { ensureScrollable: false, duration: randomNumber(10) }).waitForResources();
 
   cy.get('.search-results-container').children().last().as('lastContainer');
