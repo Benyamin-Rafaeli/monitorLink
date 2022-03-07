@@ -1,6 +1,8 @@
 // a.map(el => Object.assign({linkedin: '', }, el))
 // import Sheet from '../../sheet';
 
+import { index } from 'handsontable/helpers/dom';
+
 const username = Cypress.env('username');
 const password = Cypress.env('password');
 let graph = [];
@@ -13,9 +15,14 @@ const forceControl = (index: number) => {
   }
 };
 
-describe('login', () => {
+describe('collect', () => {
+  beforeEach(() => {
+    cy.fixture('test.json').as('companiesArray');
+  });
+
   it.skip('hashtags on linkedin', () => {
     cy.linkedInLogin(username, password).waitForResources();
+
     cy.fixture('test').then(array => {
       total = array.length;
       array.forEach((item, index) => {
@@ -37,20 +44,39 @@ describe('login', () => {
   });
 
   it.skip('links on google', () => {
-    cy.fixture('test').then(array => {
-      total = array.length;
-      array.forEach((item, index) => {
-        cy.log(`🗣️🗣️🗣️🗣️🗣️ total : ${total - index}`);
-
-        cy.googleBackLinks(item.website);
-
+    let checkUrl;
+    cy.get('@companiesArray').then(company => {
+      Cypress._.times(company.length, index => {
+        checkUrl = company[index]['website'];
+        cy.googleBackLinks(checkUrl);
         cy.get('#result-stats').invoke('text').as('result');
         cy.get('@result')
           .then(result => {
             // @ts-ignore
-            item.googleCount = result.split('תוצאות')[0].replace(/^\D+/g, '').trim();
-            graph.push(item);
+            company[index]['googleCount'] = result.split('תוצאות')[0].replace(/^\D+/g, '').trim();
+            graph.push(company);
             cy.log(JSON.stringify(graph));
+          })
+          .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
+      });
+    });
+  });
+
+  it.skip('error validator w3', () => {
+    let checkUrl;
+    cy.get('@companiesArray').then(company => {
+      Cypress._.times(company.length, index => {
+        checkUrl = company[index]['website'];
+        cy.visit('https://validator.w3.org/').waitForResources();
+        cy.get('#doc').type(checkUrl);
+        cy.get('#submit').click().waitForResources();
+        cy.get('#results')
+          .find('li')
+          .then(foundErrors => {
+            company[index]['errorValidator'] = String(foundErrors.length);
+            graph.push(company);
+            cy.log(JSON.stringify(graph));
+            cy.pause();
           })
           .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
       });
