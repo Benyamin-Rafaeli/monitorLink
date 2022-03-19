@@ -18,7 +18,7 @@ const forceControl = (index: number) => {
 describe('collect', () => {
   beforeEach(() => cy.fixture('test.json').as('companiesArray'));
 
-  it('similar web', () => {
+  it.skip('similar web', () => {
     cy.get('@companiesArray').then(company => {
       Cypress._.times(company.length, index => {
         checkUrl = company[index]['website'];
@@ -57,27 +57,83 @@ describe('collect', () => {
     });
   });
 
-  it.skip('hashtags on linkedin', () => {
+  it('hashtags on linkedin', () => {
     cy.linkedInLogin(username, password).waitForResources();
 
-    cy.fixture('test').then(array => {
-      total = array.length;
-      array.forEach((item, index) => {
-        cy.log(`🗣️🗣️🗣️🗣️🗣️ total : ${total - index}`);
-
-        cy.linkedInHashtags(undefined, `#${item.hashtag}`);
+    cy.get('@companiesArray').then(company => {
+      Cypress._.times(company.length, index => {
+        checkUrl = company[index]['hashtag'];
+        cy.linkedInHashtags(undefined, `#${checkUrl}`);
         cy.linkedInTotalPageNumbers();
-
-        cy.get('@times')
-          .then(time => {
-            graph.push({ website: item.website, hashtag: item.hashtag, linkedin: String(time).trim() });
-            cy.log(JSON.stringify(graph));
-          })
-          .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
-
-        // forceControl(index);
+        cy.pause();
+        // cy.get('@times')
+        //     .then(time => {
+        //       graph.push({ website: item.website, hashtag: item.hashtag, linkedin: String(time).trim() });
+        //       cy.log(JSON.stringify(graph));
+        //     })
+        //     .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
       });
     });
+
+    // cy.fixture('test').then(array => {
+    //   total = array.length;
+    //   array.forEach((item, index) => {
+    //     cy.log(`🗣️🗣️🗣️🗣️🗣️ total : ${total - index}`);
+    //
+    //     cy.linkedInHashtags(undefined, `#${item.hashtag}`);
+    //     cy.linkedInTotalPageNumbers();
+    //
+    //     cy.get('@times')
+    //       .then(time => {
+    //         graph.push({ website: item.website, hashtag: item.hashtag, linkedin: String(time).trim() });
+    //         cy.log(JSON.stringify(graph));
+    //       })
+    //       .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
+    //
+    //     // forceControl(index);
+    //   });
+    // });
+  });
+
+  it.only('fetch contact by company', () => {
+    cy.linkedInLogin(username, password).waitForResources();
+
+    cy.get('@companiesArray').then(company => {
+      Cypress._.times(company.length, index => {
+        checkUrl = company[index]['website'];
+        // checkUrl = company[index]['hashtag'];
+        cy.linkedInHashtags(undefined, checkUrl);
+
+        // https://www.linkedin.com/search/results/people/?keywords=#panorays&origin=SWITCH_SEARCH_VERTICAL
+
+        cy.pause();
+        // cy.get('@times')
+        //     .then(time => {
+        //       graph.push({ website: item.website, hashtag: item.hashtag, linkedin: String(time).trim() });
+        //       cy.log(JSON.stringify(graph));
+        //     })
+        //     .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
+      });
+    });
+
+    // cy.fixture('test').then(array => {
+    //   total = array.length;
+    //   array.forEach((item, index) => {
+    //     cy.log(`🗣️🗣️🗣️🗣️🗣️ total : ${total - index}`);
+    //
+    //     cy.linkedInHashtags(undefined, `#${item.hashtag}`);
+    //     cy.linkedInTotalPageNumbers();
+    //
+    //     cy.get('@times')
+    //       .then(time => {
+    //         graph.push({ website: item.website, hashtag: item.hashtag, linkedin: String(time).trim() });
+    //         cy.log(JSON.stringify(graph));
+    //       })
+    //       .then(() => cy.writeFile(`cypress/fixtures/graph.json`, graph));
+    //
+    //     // forceControl(index);
+    //   });
+    // });
   });
 
   it.skip('links on google', () => {
